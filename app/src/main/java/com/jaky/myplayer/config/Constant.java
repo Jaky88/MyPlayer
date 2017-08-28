@@ -11,10 +11,13 @@ package com.jaky.myplayer.config;
 
 public class Constant {
 
-
-    public static final boolean DEBUG =false;
+    public static final int READ_TIMEOUT = 30 * 1000;
+    public static final int WRITE_TIMEOUT = 30 * 1000;
+    public static final int CONNECT_TIMEOUT = 30 * 1000;
+    public static final String BASE_URL = "";
+    public static final boolean DEBUG = false;
     // http://www.fileinfo.com/filetypes/video , "dat" , "bin" , "rms"
-    public static final String[] VIDEO_EXTENSIONS = { "264", "3g2", "3gp",
+    public static final String[] VIDEO_EXTENSIONS = {"264", "3g2", "3gp",
             "3gp2", "3gpp", "3gpp2", "3mm", "3p2", "60d", "aep", "ajp", "amv",
             "amx", "arf", "asf", "asx", "avb", "avd", "avi", "avs", "avs",
             "axm", "bdm", "bdmv", "bik", "bix", "bmk", "box", "bs4", "bsf",
@@ -44,10 +47,10 @@ public class Constant {
             "vgz", "vid", "viewlet", "viv", "vivo", "vlab", "vob", "vp3",
             "vp6", "vp7", "vpj", "vro", "vsp", "w32", "wcp", "webm", "wm",
             "wmd", "wmmp", "wmv", "wmx", "wp3", "wpl", "wtv", "wvx", "xfl",
-            "xvid", "yuv", "zm1", "zm2", "zm3", "zmv" };
+            "xvid", "yuv", "zm1", "zm2", "zm3", "zmv"};
 
     // http://www.fileinfo.com/filetypes/audio , "spx" , "mid" , "sf"
-    public static final String[] AUDIO_EXTENSIONS = { "4mp", "669", "6cm",
+    public static final String[] AUDIO_EXTENSIONS = {"4mp", "669", "6cm",
             "8cm", "8med", "8svx", "a2m", "aa", "aa3", "aac", "aax", "abc",
             "abm", "ac3", "acd", "acd-bak", "acd-zip", "acm", "act", "adg",
             "afc", "agm", "ahx", "aif", "aifc", "aiff", "ais", "akp", "al",
@@ -90,5 +93,5 @@ public class Constant {
             "wave", "wax", "wfb", "wfd", "wfp", "wma", "wow", "wpk", "wproj",
             "wrk", "wus", "wut", "wv", "wvc", "wve", "wwu", "xa", "xa", "xfs",
             "xi", "xm", "xmf", "xmi", "xmz", "xp", "xrns", "xsb", "xspf", "xt",
-            "xwb", "ym", "zvd", "zvr" };
+            "xwb", "ym", "zvd", "zvr"};
 }

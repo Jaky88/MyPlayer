@@ -53,6 +53,5 @@ ext {
     zxingVersion = '3.3.0'
     retrofitVersion = '2.1.0'
     loggingVersion = '3.1.2'
-    rxandroidVersion = '1.0.1'
     appcompatv7Version = '25.3.1'
 }

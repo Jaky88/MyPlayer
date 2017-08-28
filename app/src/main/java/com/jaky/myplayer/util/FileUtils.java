@@ -42,6 +42,8 @@ public class FileUtils {
 		mHashAudio = new HashSet<String>(Arrays.asList(Constant.AUDIO_EXTENSIONS));
 	}
 
+	private static String sVideoPath;
+
 	public static boolean isVideoOrAudio(File f) {
 		final String ext = getFileExtension(f);
 		return mHashVideo.contains(ext) || mHashAudio.contains(ext);
@@ -494,5 +496,9 @@ public class FileUtils {
 		}
 
 		return "";
+	}
+
+	public static String getVideoPath() {
+		return sVideoPath;
 	}
 }

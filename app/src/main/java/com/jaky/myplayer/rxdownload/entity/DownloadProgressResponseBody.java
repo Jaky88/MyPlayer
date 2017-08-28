@@ -1,4 +1,6 @@
-package com.jaky.myplayer.network;
+package com.jaky.myplayer.rxdownload.entity;
+
+import com.jaky.myplayer.rxdownload.interf.DownloadProgressListener;
 
 import java.io.IOException;
 
@@ -11,26 +13,33 @@ import okio.Okio;
 import okio.Source;
 
 /**
- * Created by jaky on 2017/8/28 0028.
+ * @Copyright: Copyright © 2017 Onyx International Inc. All rights reserved.
+ * @Project: MyPlayer
+ * @Author: Jack
+ * @Date: 2017/8/28 0028,23:41
+ * @Version: V1.0
+ * @Description: TODO
  */
-public class DownloadResponseBody extends ResponseBody {
+
+public class DownloadProgressResponseBody extends ResponseBody {
     private ResponseBody responseBody;
     private DownloadProgressListener progressListener;
     private BufferedSource bufferedSource;
 
-    public DownloadResponseBody(ResponseBody responseBody, DownloadProgressListener progressListener) {
+    public DownloadProgressResponseBody(ResponseBody responseBody,
+                                        DownloadProgressListener progressListener) {
         this.responseBody = responseBody;
         this.progressListener = progressListener;
     }
 
     @Override
     public MediaType contentType() {
-        return null;
+        return responseBody.contentType();
     }
 
     @Override
     public long contentLength() {
-        return 0;
+        return responseBody.contentLength();
     }
 
     @Override
@@ -44,16 +53,19 @@ public class DownloadResponseBody extends ResponseBody {
     private Source source(Source source) {
         return new ForwardingSource(source) {
             long totalBytesRead = 0L;
+
             @Override
             public long read(Buffer sink, long byteCount) throws IOException {
                 long bytesRead = super.read(sink, byteCount);
                 // read() returns the number of bytes read, or -1 if this source is exhausted.
                 totalBytesRead += bytesRead != -1 ? bytesRead : 0;
+
                 if (null != progressListener) {
                     progressListener.update(totalBytesRead, responseBody.contentLength(), bytesRead == -1);
                 }
                 return bytesRead;
             }
         };
+
     }
 }
