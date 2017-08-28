@@ -18,6 +18,8 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.reactivex.Observable;
+
 public class FileDownloadHelper {
 	private static final String TAG = "FileDownloadHelper";
 	/** 线程池 */
@@ -58,6 +60,7 @@ public class FileDownloadHelper {
 			return;
 		else
 			mDownloadUrls.put(url, savePath);
+		//==================================
 		mPool.start(new Runnable() {
 
 			@Override
@@ -117,5 +120,7 @@ public class FileDownloadHelper {
 				mHandler.sendMessage(mHandler.obtainMessage(MESSAGE_STOP, url));
 			}
 		});
+
+		//=================================================
 	}
 }
