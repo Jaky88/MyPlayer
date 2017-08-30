@@ -5,7 +5,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
-import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -92,7 +91,6 @@ public class DownloadService extends IntentService {
         }
     }
 
-    @NonNull
     private DownloadProgressListener getDownloadProgressListener() {
         return new DownloadProgressListener() {
             @Override

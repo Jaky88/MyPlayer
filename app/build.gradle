@@ -30,30 +30,30 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.alibaba:fastjson:$rootProject.fastjsonVersion"
+
     compile project(':vitamio')
     compile 'com.android.support:multidex:1.0.0'
     compile "com.android.support:appcompat-v7:$rootProject.appcompatv7Version"
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
-
-
-    /*trello*/
-    compile 'com.trello:rxlifecycle:1.0'
-    compile 'com.trello:rxlifecycle-components:1.0'
-
-    /*rx-android*/
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.5'
-
-    /*rotrofit*/
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile "com.squareup.retrofit2:converter-scalars:$rootProject.retrofitVersion"
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
-    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.loggingVersion"
-
-    /*gson*/
-    compile 'com.google.code.gson:gson:2.8.0'
+    //fastjson
+    compile "com.alibaba:fastjson:$rootProject.fastjsonVersion"
+    //gson解析
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.google.code.gson:gson-parent:2.7'
+    //RxAndroid1/RxJava1
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    //retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    //okhttp3
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okio:okio:1.8.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
 
 }
